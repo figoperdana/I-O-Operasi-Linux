@@ -13,3 +13,6 @@ could see
 and all he
 could see was
 sea, sea, sea.
+
+cat hello.txt | sort | uniq
+cat hello.txt | grep “fuzzy” | grep –v “wuzzy”
