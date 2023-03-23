@@ -16,3 +16,43 @@ sea, sea, sea.
 
 cat hello.txt | sort | uniq
 cat hello.txt | grep “fuzzy” | grep –v “wuzzy”
+
+7. Notasi here document (<<++ ... ++) digunakan sebagai pembatas input dari keyboard. Perhatikan bahwa tanda pembatas dapat digantikan dengan tanda apa saja, namun harus sama dan tanda penutup harus diberikan pada awal baris :
+$ cat <<++
+Hallo, apa
+kabar?Baik-baik
+saja?
+Ok!
+++
+$ cat <<%%%
+Hallo, apa
+kabar?Baik-baik
+saja?
+Ok
+!
+&&
+&
+
+8. Notasi – (input keyboard) adalah representan input dari keyboard. Artinya menampilkan file 1, kemudian menampilkan input dari keyboard dan menampilkan file 2. Perhatikan bahwa notasi “-” berarti menyelipkan input dari keyboard :
+$ cat myfile.txt – surat
+9. Untuk membelokkan standar output ke file, digunakan operator >
+$ echo hello
+$ echo hello > output
+$ cat output
+10.Untuk menambahkan output ke file digunakan operator >>
+$ echo bye >> output
+$ cat output
+11.Untuk membelokkan standar input digunakan operator <
+$ cat < output
+12.Pembelokkan standar input dan standar output dapat dikombinasikan tetapi
+tidak boleh mengggunakan nama file yang sama sebagai standar input dan
+output
+$ cat < output > out
+$ cat out
+$ cat < output >> out
+$ cat out
+$ cat < output > output
+$ cat output
+$ cat < out >> out (Prose tidak berhenti) [Ctrl –c]
+$ cat out
+
